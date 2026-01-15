@@ -29,7 +29,11 @@ print("✅ Все библиотеки готовы")
 print("=" * 50)
 
 # ==== ВАШИ ДАННЫЕ ====
-BOT_TOKEN = "8543540956:AAGJI5ZpqEhbyByn8rD1hKnX7gUlin4xDhU"
+BOT_TOKEN = os.getenv("BOT_TOKEN")  # Без вашего токена!
+
+# Добавьте проверку:
+if not BOT_TOKEN:
+    raise ValueError("❌ BOT_TOKEN не найден! Создайте файл .env")
 ADMIN_ID = 1460213585  # Ваш ID (получен от бота)
 
 print("=" * 50)
